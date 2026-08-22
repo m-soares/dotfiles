@@ -38,7 +38,6 @@
       "herdr"
     ];
     casks = [
-      "wezterm"
       "claude-code"
     ];
   };
