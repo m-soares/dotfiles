@@ -46,6 +46,36 @@ in
     };
   };
 
+  programs.vscode = {
+    enable = true;
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        dracula-theme.theme-dracula
+      ];
+      userSettings = {
+        "editor.formatOnSave" = true;
+        "editor.fontSize" = 12;
+        # add your settings here
+      };
+    };
+  };
+
+  programs.atuin = {
+    enable = true;
+
+    flags = [
+      "--disable-ai"
+    ];
+
+    settings = {
+      auto_sync = false;
+      update_check = false;
+
+      # Explicitly keep AI disabled
+      ai.enabled = false;
+    };
+  };
+
   # Edit-in-place: the real file stays in my repo, ~/.config just points at it.
   home.file.".config/herdr".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
