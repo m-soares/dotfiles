@@ -14,7 +14,7 @@ in
     jq        # json on the command line
     lazygit
     # the font everything renders in
-    nerd-fonts.hack
+    nerd-fonts.hack # we need to use these fonts to starship to work
     nerd-fonts.fira-code
   ];
   fonts.fontconfig.enable = true;
