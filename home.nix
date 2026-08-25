@@ -82,6 +82,9 @@ in
   home.file.".claude/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
 
+home.file.".config/iterm2/com.googlecode.iterm2.plist".source =
+  config.lib.file.mkOutOfStoreSymlink "${dotfiles}/iterm2/com.googlecode.iterm2.plist";
+
   # Keep Pi's credential and runtime state local by linking only authored files and directories.
   home.file.".pi/agent/themes".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/themes";

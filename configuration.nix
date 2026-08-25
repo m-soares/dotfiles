@@ -41,6 +41,7 @@
     casks = [
       "flycut"
       "visual-studio-code"
+      "iterm2"
       #ai agents
       "claude-code"
     ];
