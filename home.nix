@@ -15,6 +15,7 @@ in
     lazygit
     # the font everything renders in
     nerd-fonts.hack
+    nerd-fonts.fira-code
   ];
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
@@ -74,6 +75,11 @@ in
       # Explicitly keep AI disabled
       ai.enabled = false;
     };
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
   # Edit-in-place: the real file stays in my repo, ~/.config just points at it.
