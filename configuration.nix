@@ -36,7 +36,8 @@
     brews = [
       "herdr"
       "zoxide"
-      
+      "pi-coding-agent"
+      "opencode"
     ];
     casks = [
       "flycut"
