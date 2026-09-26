@@ -1,0 +1,9 @@
+{
+    "hasCompletedOnboarding": true,
+    "primary": {
+        "provider": "openai",
+        "baseURL": "http://localhost:20128/v1",
+        "apiKey": "sk-dafee39d1368f53e-w7z4el-ce1e04e2",
+        "model": "kr/gpt-5.6-sol"
+    }
+}

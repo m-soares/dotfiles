@@ -82,14 +82,30 @@ in
     enableZshIntegration = true;
   };
 
+  programs.ghostty = {
+    enable = true;
+    package = if pkgs.stdenv.isDarwin then pkgs.ghostty-bin else pkgs.ghostty;
+
+    # Enable for whichever shell you plan to use!
+    enableBashIntegration = true;
+    enableFishIntegration = true;
+    enableZshIntegration = true;
+
+    settings = {
+      theme = "Catppuccin Latte";
+    };
+  };
+
   # Edit-in-place: the real file stays in my repo, ~/.config just points at it.
   home.file.".config/herdr".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
   home.file.".claude/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/settings.json";
+  home.file.".claude/config.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.claude/config.json";
 
-home.file.".config/iterm2/com.googlecode.iterm2.plist".source =
-  config.lib.file.mkOutOfStoreSymlink "${dotfiles}/iterm2/com.googlecode.iterm2.plist";
+  home.file.".config/iterm2/com.googlecode.iterm2.plist".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/iterm2/com.googlecode.iterm2.plist";
 
   # Keep Pi's credential and runtime state local by linking only authored files and directories.
   home.file.".pi/agent/themes".source =
@@ -107,4 +123,6 @@ home.file.".config/iterm2/com.googlecode.iterm2.plist".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
   home.file.".config/opencode/AGENTS.md".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
+  home.file.".config/opencode/opencode.jsonc".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/opencode/opencode.jsonc";  
 }

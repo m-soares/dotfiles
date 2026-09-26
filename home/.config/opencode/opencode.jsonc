@@ -1,0 +1,17 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "plugin": [
+        "@vheins/opencode-9router@latest"
+    ],
+    "model": "9router/DeveloperMax",
+    "provider": {
+        "9router": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "9Router",
+            "options": {
+                "baseURL": "http://localhost:20128",
+                "apiKey": "sk-dafee39d1368f53e-w7z4el-ce1e04e2"
+            }
+        }
+    }
+}
